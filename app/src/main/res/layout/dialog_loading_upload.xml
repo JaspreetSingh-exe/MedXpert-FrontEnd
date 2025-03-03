@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="@drawable/dialog_background"
+    android:backgroundTint="@color/white">
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Material.ProgressBar.Large"
+        android:indeterminate="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Uploading"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:paddingTop="10dp"
+        android:backgroundTint="@color/white"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This may take upto a minute*"
+            android:textStyle="italic"
+        android:backgroundTint="@color/white"
+            android:textSize="12sp"
+            android:textColor="@android:color/black"
+            android:paddingTop="10dp" />
+</LinearLayout>
