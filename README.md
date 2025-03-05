@@ -45,6 +45,15 @@ The frontend of MedXpert provides a seamless and user-friendly Android interface
 ---
 
 
+## 📥 Download MedXpert APK
+
+🔗 [**Download Latest APK**](https://github.com/JaspreetSingh-exe/MedXpert-FrontEnd/releases/download/v1.0.0/app-debug.apk)
+
+💡 Click the link above to download the latest version of the MedXpert app and install it on your Android device.
+
+---
+
+
 ## 🌐 Live Demo
 
 ▶️ **Click the image below to watch the full demo video:**
