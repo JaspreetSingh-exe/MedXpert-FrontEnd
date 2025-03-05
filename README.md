@@ -7,37 +7,43 @@ This repository contains the full Android app codebase for the MedXpert system, 
 ---
 
 ## 🏥 Problem Statement & Why MedXpert is Useful
+
 ### **The Challenge:**
 Understanding medical reports can be challenging for non-medical professionals. Many patients struggle to interpret complex test results, abnormal values, and medical terminology. Additionally, doctors often have limited time to explain reports in detail, leaving patients uncertain about their health conditions.
+
+---
 
 ## 🚀 How MedXpert Solves This Problem
 
 ### Backend:
 The backend of MedXpert is responsible for handling the heavy lifting of medical report analysis. It performs the following tasks:
 
-- **Extracts Medical Data**: Utilizes advanced OCR technologies like Tesseract and pdfplumber to accurately extract text from PDF and image-based medical reports.
-- **Summarizes Medical Jargon**: Processes complex medical terminologies and converts them into simplified, understandable summaries using AI-powered language models (OpenAI GPT-3.5).
-- **Detects Abnormal Readings**: Scans for abnormal values within the report and highlights potential health concerns through AI-driven analysis.
-- **Powers the Chatbot**: Provides instant, reliable answers to user queries about their medical reports by leveraging LLM (Large Language Model)-based responses.
+- ✅ **Extracts Medical Data**: Utilizes advanced OCR technologies like Tesseract and pdfplumber to accurately extract text from PDF and image-based medical reports.
+- ✅ **Summarizes Medical Jargon**: Processes complex medical terminologies and converts them into simplified, understandable summaries using AI-powered language models (OpenAI GPT-3.5).
+- ✅ **Detects Abnormal Readings**: Scans for abnormal values within the report and highlights potential health concerns through AI-driven analysis.
+- ✅ **Powers the Chatbot**: Provides instant, reliable answers to user queries about their medical reports by leveraging LLM (Large Language Model)-based responses.
+
+---
 
 ### Frontend:
 The frontend of MedXpert provides a seamless and user-friendly Android interface for interacting with the backend features. It handles:
 
-- **User-Friendly Interface**: Designed to ensure even non-technical users can easily upload reports and view results.
-- **Report Upload & Results Display**: Allows users to submit their reports and receive a detailed analysis and summary of the findings.
-- **Abnormality Highlighting**: Visually marks abnormal values within the summary to help users quickly identify areas of concern.
-- **User Role Management**: Manages user authentication (guest and logged-in users) and enforces usage limits.
-- **Chatbot Interaction**: Facilitates communication with the backend chatbot for personalized health insights and explanations.
-
-Together, MedXpert creates an end-to-end solution that transforms raw medical reports into actionable, understandable insights for patients.
-- Provides an intuitive Android app interface.
-- Allows users to upload reports and view summaries.
-- Displays highlighted abnormalities visually.
-- Manages user roles, limits, and chatbot interactions.
-
-Together, MedXpert makes medical understanding accessible and actionable.
+- ✅ **User-Friendly Interface**: Designed to ensure even non-technical users can easily upload reports and view results.
+- ✅ **Report Upload & Results Display**: Allows users to submit their reports and receive a detailed analysis and summary of the findings.
+- ✅ **Abnormality Highlighting**: Visually marks abnormal values within the summary to help users quickly identify areas of concern.
+- ✅ **User Role Management**: Manages user authentication (guest and logged-in users) and enforces usage limits.
+- ✅ **Chatbot Interaction**: Facilitates communication with the backend chatbot for personalized health insights and explanations.
 
 ---
+
+### ✅ MedXpert makes medical understanding accessible and actionable by:
+- ✅ Providing an intuitive Android app interface.
+- ✅ Allowing users to upload reports and view summaries.
+- ✅ Displaying highlighted abnormalities visually.
+- ✅ Managing user roles, limits, and chatbot interactions.
+
+---
+
 
 ## 🌐 Live Demo
 
@@ -121,14 +127,16 @@ FirebaseAuth.getInstance()
 
 
 - **Usage limits based on user roles**:
-  - **Guest Users** (Limit: 2 uploads per day):
-    ```kotlin
-    if (user.isGuest && dailyUploads >= 2) showLimitReached()
-    ```
-  - **Logged-in Users** (Limit: 10 uploads per day):
+   
+  - **Logged-in Users** (Limit: 5 uploads per day and 10 chabot queries per day):  
     ```kotlin
     if (user.isLoggedIn && dailyUploads >= 10) showLimitReached()
     ```
+  - **Guest Users** (Limit: 2 uploads per day and not chabot access):
+    ```kotlin
+    if (user.isGuest && dailyUploads >= 2) showLimitReached()
+    ```
+  
   <div style="display: flex; gap: 20px;">
   <img src="images/guest_chatbot.JPG" alt="ChatbotLock" width="200"/>
 </div>
@@ -276,14 +284,14 @@ Ensure the following configurations:
 - Connect your project with Firebase through the Firebase Console.
 - Define your backend API endpoints in the appropriate service classes.
 
-#### Add API URL in `strings.xml`
+### 4. Add api_url in `strings.xml`
 ```xml
 <resources>
     <string name="api_url">https://api.medxpert.com/</string>
 </resources>
 ```
 
-### 4. Build and run
+### 5. Build and run
 
 To run the project:
 - Click on the **Run** button or use the shortcut `Shift + F10`.
@@ -324,6 +332,8 @@ Implement support for multiple languages to make the app accessible to a global 
 
 ### 🔹 Offline Support
 Allow users to view previously analyzed reports and summaries without needing an active internet connection.
+
+---   
 
 
 ## 🤝 Open for Contributions
