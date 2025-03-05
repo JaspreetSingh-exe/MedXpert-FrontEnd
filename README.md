@@ -41,32 +41,84 @@ Together, MedXpert makes medical understanding accessible and actionable.
 
 ## 🌐 Live Demo
 
-[![Watch the Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+▶️ **Click the image below to watch the full demo video:**
+
+[![Watch the Demo](https://img.youtube.com/vi/-8R1s6liwyo/maxresdefault.jpg)](https://youtu.be/-8R1s6liwyo)
 
 ---
 
 
+
+
 ## ⚙️ Features
 
-- **Upload medical reports (PDF/Image formats)**  
-  ![Upload Report](images/upload_report.png)
+- **User authentication (Guest & Logged-in users)**  
+  <div style="display: flex; gap: 20px;">
+  <img src="images/signup.JPG" alt="Signup" width="200"/>
+  <img src="images/login.JPG" alt="Signin" width="200"/>
+  <img src="images/forgot_pass.JPG" alt="Forgot Password" width="200"/>
+</div>
+
+  ```kotlin
+// ✅ Signup
+FirebaseAuth.getInstance()
+    .createUserWithEmailAndPassword(email, password)
+    .addOnCompleteListener { task ->
+        if (task.isSuccessful) {
+            // Signup success
+        } else {
+            // Signup failed
+        }
+    }
+
+// ✅ Signin
+FirebaseAuth.getInstance()
+    .signInWithEmailAndPassword(email, password)
+    .addOnCompleteListener { task ->
+        if (task.isSuccessful) {
+            // Signin success
+        } else {
+            // Signin failed
+        }
+    }
+
+// ✅ Forgot Password
+FirebaseAuth.getInstance()
+    .sendPasswordResetEmail(email)
+    .addOnCompleteListener { task ->
+        if (task.isSuccessful) {
+            // Reset email sent
+        } else {
+            // Failed to send reset email
+        }
+    }
+```
+
+- **Upload medical reports (PDF/Image formats)**
+
+  <div style="display: flex; gap: 20px;">
+  <img src="images/upload.JPG" alt="File Upload" width="200"/>
+  <img src="images/uploaded.JPG" alt="File Selected" width="200"/>
+  <img src="images/uploading.JPG" alt="File Uploaded" width="200"/>
+</div>
+
+
   ```kotlin
   val intent = Intent(Intent.ACTION_GET_CONTENT)
   intent.type = "application/pdf"
   startActivityForResult(intent, REQUEST_CODE)
   ```
 
-- **View simplified summaries of your reports**  
-  ![View Summary](images/view_summary.png)
+- **View simplified summaries  and abnormalities of your reports**  
+  <div style="display: flex; gap: 20px;">
+  <img src="images/summary.JPG" alt="Summary" width="200"/>
+
+</div>
+  
   ```kotlin
   summaryTextView.text = "Summary: ${viewModel.summary}"
   ```
 
-- **Highlight abnormal readings**  
-  ![Highlight Abnormalities](images/highlight_abnormalities.png)
-  ```kotlin
-  if (value > threshold) highlightView.setBackgroundColor(Color.RED)
-  ```
 
 - **Usage limits based on user roles**:
   - **Guest Users** (Limit: 2 uploads per day):
@@ -77,22 +129,15 @@ Together, MedXpert makes medical understanding accessible and actionable.
     ```kotlin
     if (user.isLoggedIn && dailyUploads >= 10) showLimitReached()
     ```
-  ![Usage Limits](images/usage_limits.png)
+  <div style="display: flex; gap: 20px;">
+  <img src="images/guest_chatbot.JPG" alt="ChatbotLock" width="200"/>
+</div>
 
-- **User authentication (Guest & Logged-in users)**  
-  ![Authentication](images/authentication.png)
-  ```kotlin
-  FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
-  ```
-
-- **Integrated chatbot (coming soon)**  
-  ![Chatbot](images/chatbot_feature.png)
-
-- **Clean, responsive Android UI**  
-  ![Responsive UI](images/responsive_ui.png)
-
-- **Secure Firebase integration**  
-  ![Firebase](images/firebase_integration.png)
+- **Integrated chatbot**  
+  <div style="display: flex; gap: 20px;">
+  <img src="images/chatbot_splash.JPG" alt="ChabotSplash" width="200"/>
+  <img src="images/chatbot_chat.JPG" alt="ChatbotChat" width="200"/>
+</div>
 
 ---
 
